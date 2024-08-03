@@ -1,0 +1,58 @@
+<html>
+<head>
+
+<link href="css/style.css" rel="stylesheet" type="text/css" />
+<script language="javascript">
+	document.onmousedown=disableclick;
+	status="Welcome to Demo Project";
+	function disableclick(event)
+	{
+		if(event.button==2)
+		{
+			alert(status);
+			return false;
+		}
+	}
+</script>
+
+<!--<script type = "text/javascript" >
+	function preventBack()
+		{
+			window.history.forward();
+		}
+	setTimeout("preventBack()", 0);
+	window.onunload=function(){null};
+</script>-->
+
+<script type = "text/javascript">
+function valForm(){
+	if(document.login.name.value=="")
+		{
+			alert("Please Enter your name");
+			document.login.name.focus();
+			return false;
+		}
+	if(document.login.pass.value=="")
+		{
+			alert("Please Enter your password");
+			document.login.pass.focus();
+			return false;
+		}
+	document.login.submit();
+}
+</script>
+
+</head>
+
+<body>
+		<div class="login">
+			<h2>Login</h2>
+			<form name="login" id="login" method="post" action="babyHome.jsp">
+				<input type="text" name="name" placeholder="Enter your name"/> <br><br>
+				<input type="text" name="pass" placeholder="Enter your password"/> <br><br>
+				<input type="submit" value="Login" onclick="return valForm()"/><br><br>
+				
+		</form>
+		</div>
+</body>
+</html>
